@@ -10,9 +10,11 @@ import com.bpapps.matrix_bakshaevpeter.R
 import com.bpapps.matrix_bakshaevpeter.model.datamodel.DataListObject
 import com.squareup.picasso.Picasso
 
-class ItemsAdapter(private val dataSet: ArrayList<DataListObject>) :
+class ItemsAdapter(
+    private val dataSet: ArrayList<DataListObject>,
+    private val onItemClickCallBack: OnItemClickListener? = null
+) :
     RecyclerView.Adapter<ItemsAdapter.ItemViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -31,12 +33,18 @@ class ItemsAdapter(private val dataSet: ArrayList<DataListObject>) :
 
         holder.tvListItemTitle.text = dataItem.title
         holder.tvListItemSubTitle.text = dataItem.sTitle
+        holder.itemView.setOnClickListener {
+            onItemClickCallBack?.onItemClick(dataItem.id!!)
+        }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(id: Int)
     }
 
     class ItemViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val ivListItem: AppCompatImageView = v.findViewById(R.id.ivListItem)
         val tvListItemTitle: AppCompatTextView = v.findViewById(R.id.tvListItemTitle)
         val tvListItemSubTitle: AppCompatTextView = v.findViewById(R.id.tvListItemSubTitle)
-
     }
 }

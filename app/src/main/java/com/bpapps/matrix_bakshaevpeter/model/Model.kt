@@ -1,5 +1,6 @@
 package com.bpapps.matrix_bakshaevpeter.model
 
+import com.bpapps.matrix_bakshaevpeter.model.datamodel.DataListObject
 import com.bpapps.matrix_bakshaevpeter.model.datamodel.Result
 import com.bpapps.matrix_bakshaevpeter.model.repository.Repository
 
@@ -17,6 +18,10 @@ class Model {
                 callback.onFailure(error)
             }
         })
+    }
+
+    fun getItemById(value: Int): DataListObject? {
+        TODO("Not yet implemented")
     }
 
     companion object {

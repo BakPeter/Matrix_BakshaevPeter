@@ -42,14 +42,11 @@ class BenefitsViewModel : ViewModel() {
         this.callBack = callBack
     }
 
-
     fun unRegisterForLoadDataListener() {
         this.callBack = null
     }
 
     fun updateItemsDataByCategory() {
-        val retVal: ArrayList<DataListObject> = arrayListOf()
-
         data?.dataObject?.dataListObject?.forEach { item ->
             when (item.catId) {
                 1 -> cat1Data.add(item)

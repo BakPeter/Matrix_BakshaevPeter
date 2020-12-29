@@ -16,7 +16,8 @@ import com.bpapps.matrix_bakshaevpeter.model.datamodel.Result
 import com.bpapps.matrix_bakshaevpeter.view.adapters.ItemsAdapter
 import com.bpapps.matrix_bakshaevpeter.viewmodel.RecommendationsViewModel
 
-class RecommendationsFragment : Fragment(), RecommendationsViewModel.DataUpdatedListener {
+class RecommendationsFragment : Fragment(), RecommendationsViewModel.DataUpdatedListener,
+    ItemsAdapter.OnItemClickListener {
     private val viewModel: RecommendationsViewModel by viewModels()
 
     private lateinit var tvCategory1: AppCompatTextView
@@ -60,27 +61,27 @@ class RecommendationsFragment : Fragment(), RecommendationsViewModel.DataUpdated
         tvCategory5 = view.findViewById(R.id.tvCategory5Name)
 
         rvCategory1 = view.findViewById(R.id.rvCategory1)
-        rvCategory1.adapter = ItemsAdapter(viewModel.cat1Data)
+        rvCategory1.adapter = ItemsAdapter(viewModel.cat1Data, this)
         rvCategory1.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         rvCategory2 = view.findViewById(R.id.rvCategory2)
-        rvCategory2.adapter = ItemsAdapter(viewModel.cat2Data)
+        rvCategory2.adapter = ItemsAdapter(viewModel.cat2Data, this)
         rvCategory2.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         rvCategory3 = view.findViewById(R.id.rvCategory3)
-        rvCategory3.adapter = ItemsAdapter(viewModel.cat3Data)
+        rvCategory3.adapter = ItemsAdapter(viewModel.cat3Data, this)
         rvCategory3.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         rvCategory4 = view.findViewById(R.id.rvCategory4)
-        rvCategory4.adapter = ItemsAdapter(viewModel.cat4Data)
+        rvCategory4.adapter = ItemsAdapter(viewModel.cat4Data, this)
         rvCategory4.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         rvCategory5 = view.findViewById(R.id.rvCategory5)
-        rvCategory5.adapter = ItemsAdapter(viewModel.cat5Data)
+        rvCategory5.adapter = ItemsAdapter(viewModel.cat5Data, this)
         rvCategory5.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
@@ -129,5 +130,18 @@ class RecommendationsFragment : Fragment(), RecommendationsViewModel.DataUpdated
 
     override fun onFailure(error: Throwable) {
         Log.d(TAG, "onLoadSuccess: ${error.message}")
+    }
+
+    override fun onItemClick(position: Int) {
+//        Toast.makeText(requireContext(), "id = $position", Toast.LENGTH_SHORT).show()
+
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(
+                R.id.main_fragment_container,
+                ElementShowerFragment.newInstance(id),
+                ElementShowerFragment.FRAGMENT_TAG
+            )
+            .addToBackStack(ElementShowerFragment.FRAGMENT_STACK_TAG)
+            .commit()
     }
 }

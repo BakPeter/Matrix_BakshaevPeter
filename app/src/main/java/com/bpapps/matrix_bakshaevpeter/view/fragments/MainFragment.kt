@@ -63,6 +63,11 @@ class MainFragment : Fragment() {
     }
 
     companion object {
+        const val FRAGMENT_TAG = "MainFragment.FRAGMENT_TAG"
+        const val FRAGMENT_STACK_TAG = "MainFragment.FRAGMENT_STACK_TAG"
+        @JvmStatic
+        fun newInstance() =
+            MainFragment()
 
     }
 }
