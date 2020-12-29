@@ -46,7 +46,6 @@ class TreatsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textView.text = textView.text.toString() + viewModel.str.toString()
     }
 
 

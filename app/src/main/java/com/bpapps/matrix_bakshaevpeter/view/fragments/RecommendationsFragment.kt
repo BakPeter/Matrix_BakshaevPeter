@@ -27,7 +27,6 @@ class RecommendationsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textView.text = textView.text.toString() + viewModel.str.toString()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

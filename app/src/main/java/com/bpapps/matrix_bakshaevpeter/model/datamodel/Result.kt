@@ -8,5 +8,5 @@ import com.google.gson.annotations.SerializedName
 data class Result(
     @SerializedName("DataObject")
     @Expose
-    private val dataObject: DataObject? = null
+    val dataObject: DataObject? = null
 )

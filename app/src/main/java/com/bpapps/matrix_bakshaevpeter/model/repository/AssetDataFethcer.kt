@@ -13,7 +13,7 @@ class AssetDataFetcher {
         Thread(Runnable {
             try {
 
-                throw java.lang.Exception("Debug Test")
+                //throw java.lang.Exception("Debug Test")
 
                 var json: String? = null
 
