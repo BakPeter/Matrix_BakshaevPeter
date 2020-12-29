@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.bpapps.matrix_bakshaevpeter.model.Model
 import com.bpapps.matrix_bakshaevpeter.model.datamodel.DataListObject
 
-class ItemShowerViewModel : ViewModel() {
+class ElementShowerViewModel : ViewModel() {
 
     private val model: Model = Model.initialize()
 
@@ -16,4 +16,6 @@ class ItemShowerViewModel : ViewModel() {
         }
     var dataItem: DataListObject? = null
         private set
+
+    val noItemMsg = "NO ITEM WITH THIS ID"
 }

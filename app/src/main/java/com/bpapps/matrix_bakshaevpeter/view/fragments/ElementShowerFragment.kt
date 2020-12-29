@@ -5,17 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bpapps.matrix_bakshaevpeter.R
-import com.bpapps.matrix_bakshaevpeter.viewmodel.ItemShowerViewModel
+import com.bpapps.matrix_bakshaevpeter.viewmodel.ElementShowerViewModel
+import com.squareup.picasso.Picasso
 
 
 class ElementShowerFragment : Fragment() {
-
-    private val viewModel: ItemShowerViewModel by viewModels()
+    private val viewModel: ElementShowerViewModel by viewModels()
 
     private lateinit var ivListItem: AppCompatImageView
+    private lateinit var tvListItemTitle: AppCompatTextView
+    private lateinit var tvListItemSubTitle: AppCompatTextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +32,28 @@ class ElementShowerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_element_shower, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_element_shower, container, false)
+
+        ivListItem = view.findViewById(R.id.ivListItem)
+        tvListItemTitle = view.findViewById(R.id.tvListItemTitle)
+        tvListItemSubTitle = view.findViewById(R.id.tvListItemSubTitle)
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        if(viewModel.dataItem != null) {
+            Picasso.get().load(viewModel.dataItem?.imag).fit().centerInside().error(R.mipmap.ic_error)
+                .into(ivListItem)
+
+            tvListItemTitle.text = viewModel.dataItem?.title
+            tvListItemSubTitle.text = viewModel.dataItem?.sTitle
+        } else {
+            tvListItemTitle.text = viewModel.noItemMsg
+            tvListItemSubTitle.text = viewModel.noItemMsg
+        }
     }
 
     companion object {

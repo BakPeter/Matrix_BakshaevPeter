@@ -20,8 +20,20 @@ class Model {
         })
     }
 
-    fun getItemById(value: Int): DataListObject? {
-        TODO("Not yet implemented")
+    fun getItemById(id: Int): DataListObject? {
+//        var retVal: DataListObject? = null
+//        repository.loadData(object : Repository.LoadAssetListener {
+//            override fun onSuccess(result: Result) {
+//                retVal = result.dataObject?.dataListObject[]
+//            }
+//
+//            override fun onFailure(error: Throwable) {
+//                retVal = null
+//            }
+//
+//        })
+
+        return repository.gtItemById(id)
     }
 
     companion object {
