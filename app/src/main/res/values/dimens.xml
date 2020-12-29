@@ -6,7 +6,7 @@
     <dimen name="ivHeight">@dimen/rvCategoryHeight</dimen>
     <dimen name="listItemHeight">@dimen/rvCategoryHeight</dimen>
     <dimen name="listItemWidth">250dp</dimen>
-    <dimen name="tvListItemHeight">10sp</dimen>
+    <dimen name="tvListItemHeight">12sp</dimen>
     <dimen name="list_item_margins">10dp</dimen>
     <dimen name="tv_list_item_margins">15dp</dimen>
 

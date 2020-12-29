@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.bpapps.matrix_bakshaevpeter.R
-import com.bpapps.matrix_bakshaevpeter.model.repository.Repository
 import com.bpapps.matrix_bakshaevpeter.view.Util
 import com.bpapps.matrix_bakshaevpeter.view.adapters.AppViewPagerAdapter
 import com.bpapps.matrix_bakshaevpeter.viewmodel.BenefitsViewModel
@@ -53,7 +52,7 @@ class MainFragment : Fragment() {
             viewPager,
             TabLayoutMediator.TabConfigurationStrategy { tab, position ->
                 when (position) {
-                    Util.BENEFITS -> tab.text = getString(R.string.benfits)
+                    Util.BENEFITS -> tab.text = getString(R.string.benefits)
                     Util.RECOMMENDATIONS -> tab.text = getString(R.string.recommendations)
                     Util.TREATS -> tab.text = getString(R.string.treats)
                     Util.PREFERRED -> tab.text = getString(R.string.preferred)

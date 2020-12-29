@@ -3,12 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.RecommendationsFragment">
+    tools:context=".view.fragments.BenefitsFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/recommendation_fragment" />
-
+    <include layout="@layout/tab_view" />
 </FrameLayout>

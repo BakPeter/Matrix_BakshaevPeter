@@ -86,7 +86,6 @@ class BenefitsFragment : Fragment(), BenefitsViewModel.DataUpdatedListener {
         rvCategory5.adapter = ItemsAdapter(viewModel.cat5Data)
         rvCategory5.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
     }
 
     private fun updateTVCategoriesNames(categories: List<DataListCat>) {
