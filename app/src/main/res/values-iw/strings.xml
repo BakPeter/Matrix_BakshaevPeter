@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">מטריקס_בקשייבפיטר</string>
+
+    <string name="hello_blank_fragment">שלום פרגמנט ראשי</string>
+    <string name="benefits_fragment">@string/benfits</string>
+    <string name="recommendation_fragment">@string/recommendations</string>
+    <string name="treats_fragment">@string/treats</string>
+    <string name="preferred_fragment">@string/preferred</string>
+
+    <string name="benfits">כל ההטבות</string>
+    <string name="recommendations">המומלצים</string>
+    <string name="treats">הפינוקים שלי</string>
+    <string name="preferred">המועדפים</string>
+
+</resources>
