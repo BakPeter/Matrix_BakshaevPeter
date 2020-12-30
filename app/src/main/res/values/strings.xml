@@ -4,7 +4,7 @@
     <string name="benefits_fragment">benefits_fragment</string>
     <string name="recommendation_fragment">recommendation_fragment</string>
     <string name="treats_fragment">treats_fragment</string>
-    <string name="preferred_fragment">preffered_fragment</string>
+    <string name="preferred_fragment">preferred_fragment</string>
 
     <string name="benefits">Benefits</string>
     <string name="recommendations">Recommendations</string>

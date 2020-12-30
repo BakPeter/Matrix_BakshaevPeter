@@ -2,6 +2,7 @@ package com.bpapps.matrix_bakshaevpeter.view.fragments
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,11 +14,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bpapps.matrix_bakshaevpeter.R
 import com.bpapps.matrix_bakshaevpeter.model.datamodel.DataListCat
 import com.bpapps.matrix_bakshaevpeter.model.datamodel.Result
-import com.bpapps.matrix_bakshaevpeter.view.adapters.ItemsAdapter
+import com.bpapps.matrix_bakshaevpeter.view.adapters.ItemsShowerAdapter
+import com.bpapps.matrix_bakshaevpeter.view.snaphelpers.GravitySnapHelper
 import com.bpapps.matrix_bakshaevpeter.viewmodel.BenefitsViewModel
 
 class BenefitsFragment : Fragment(), BenefitsViewModel.DataUpdatedListener,
-    ItemsAdapter.OnItemClickListener {
+    ItemsShowerAdapter.OnItemClickListener {
 
     private val viewModel: BenefitsViewModel by viewModels()
 
@@ -64,29 +66,34 @@ class BenefitsFragment : Fragment(), BenefitsViewModel.DataUpdatedListener,
         tvCategory5 = view.findViewById(R.id.tvCategory5Name)
 
         rvCategory1 = view.findViewById(R.id.rvCategory1)
-        rvCategory1.adapter = ItemsAdapter(viewModel.cat1Data, this)
+        rvCategory1.adapter = ItemsShowerAdapter(viewModel.cat1Data, this)
         rvCategory1.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        GravitySnapHelper(Gravity.START).attachToRecyclerView(rvCategory1)
 
         rvCategory2 = view.findViewById(R.id.rvCategory2)
-        rvCategory2.adapter = ItemsAdapter(viewModel.cat2Data, this)
+        rvCategory2.adapter = ItemsShowerAdapter(viewModel.cat2Data, this)
         rvCategory2.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        GravitySnapHelper(Gravity.START).attachToRecyclerView(rvCategory2)
 
         rvCategory3 = view.findViewById(R.id.rvCategory3)
-        rvCategory3.adapter = ItemsAdapter(viewModel.cat3Data, this)
+        rvCategory3.adapter = ItemsShowerAdapter(viewModel.cat3Data, this)
         rvCategory3.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        GravitySnapHelper(Gravity.START).attachToRecyclerView(rvCategory3)
 
         rvCategory4 = view.findViewById(R.id.rvCategory4)
-        rvCategory4.adapter = ItemsAdapter(viewModel.cat4Data, this)
+        rvCategory4.adapter = ItemsShowerAdapter(viewModel.cat4Data, this)
         rvCategory4.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        GravitySnapHelper(Gravity.START).attachToRecyclerView(rvCategory4)
 
         rvCategory5 = view.findViewById(R.id.rvCategory5)
-        rvCategory5.adapter = ItemsAdapter(viewModel.cat5Data, this)
+        rvCategory5.adapter = ItemsShowerAdapter(viewModel.cat5Data, this)
         rvCategory5.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        GravitySnapHelper(Gravity.START).attachToRecyclerView(rvCategory5)
     }
 
     private fun updateTVCategoriesNames(categories: List<DataListCat>) {

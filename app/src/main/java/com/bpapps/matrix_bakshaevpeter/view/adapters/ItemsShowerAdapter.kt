@@ -10,11 +10,11 @@ import com.bpapps.matrix_bakshaevpeter.R
 import com.bpapps.matrix_bakshaevpeter.model.datamodel.DataListObject
 import com.squareup.picasso.Picasso
 
-class ItemsAdapter(
+class ItemsShowerAdapter(
     private val dataSet: ArrayList<DataListObject>,
     private val onItemClickCallBack: OnItemClickListener? = null
 ) :
-    RecyclerView.Adapter<ItemsAdapter.ItemViewHolder>() {
+    RecyclerView.Adapter<ItemsShowerAdapter.ItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -28,6 +28,9 @@ class ItemsAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val dataItem: DataListObject = dataSet[position]
 
+//        dataItem.imgBitmap?.let { bitmap ->
+//            holder.ivListItem.setImageBitmap(bitmap)
+//        }
         Picasso.get().load(dataItem.imag).fit().centerInside().error(R.mipmap.ic_error)
             .into(holder.ivListItem)
 

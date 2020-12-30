@@ -1,5 +1,6 @@
 package com.bpapps.matrix_bakshaevpeter.model.datamodel
 
+import android.graphics.Bitmap
 import com.google.gson.annotations.Expose
 
 import com.google.gson.annotations.SerializedName
@@ -36,5 +37,7 @@ data class DataListObject(
 
     @SerializedName("ClET")
     @Expose
-    val clET: Boolean? = null
+    val clET: Boolean? = null,
+
+    var imgBitmap: Bitmap? = null
 )
